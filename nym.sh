@@ -78,7 +78,7 @@ sudo ufw allow 1789
 sudo ufw allow 1790
 sudo ufw allow 8000
 sudo ufw enable
-sudo systemctl start ufw
+sudo systemctl start ufw -y
 echo "Firewall Rules Added & Enabled"
 
 nym-mixnode init --host $(curl ifconfig.me) --id $node-id --wallet-address $wallet_address

@@ -1,5 +1,4 @@
 #!/bin/bash
-# Bash Menu Script Example
 # Testnets.io
 
 title="Nym Manager"

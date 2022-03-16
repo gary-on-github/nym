@@ -80,6 +80,7 @@ sudo ufw enable
 sudo systemctl start ufw -y
 echo "Firewall Rules Added & Enabled"
 
+source $HOME/.bash_profile
 nym-mixnode init --host $(curl ifconfig.me) --id $node-id --wallet-address $wallet_address
 
 echo "DefaultLimitNOFILE=65535" >> /etc/systemd/system.conf

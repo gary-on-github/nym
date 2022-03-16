@@ -76,7 +76,7 @@ sudo ufw allow 443
 sudo ufw allow 1789
 sudo ufw allow 1790
 sudo ufw allow 8000
-sudo ufw enable
+sudo ufw --force enable
 sudo systemctl start ufw -y
 echo "Firewall Rules Added & Enabled"
 

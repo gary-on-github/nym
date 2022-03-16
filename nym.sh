@@ -105,9 +105,13 @@ sudo ss -s -t | grep 1789 # if you have specified a different port in your mixno
 }
 function stop_nym_service { 
 sudo systemctl stop nym-mixnode
+echo "Nym Service Stoped"
+sleep 1
 }
 function start_nym_service   { 
 sudo systemctl start nym-mixnode
+echo "Nym Service Started"
+sleep 1
 }
 function bond_information   { 
 source $HOME/.bash_profile

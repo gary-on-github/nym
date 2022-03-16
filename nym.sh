@@ -25,6 +25,7 @@ options=(
     "Socket Statistics"
     "Stop Nym Service"
     "Start Nym Service"
+    "Bond Information"
     "Quit"
 )
 
@@ -108,6 +109,10 @@ sudo systemctl stop nym-mixnode
 function start_nym_service   { 
 sudo systemctl start nym-mixnode
 }
+function bond_information   { 
+source $HOME/.bash_profile
+nym-mixnode node-details --id $node_id
+}
 function quit          { 
   echo -e "Exiting ... " ; exit 
 }
@@ -129,7 +134,8 @@ function show_menu {
        5 ) socket_statisics     ; break ;;
        6 ) stop_nym_service     ; break ;;
        7 ) start_nym_service    ; break ;;
-       8 ) quit                 ; break ;;
+       8 ) bond_information     ; break ;;
+       9 ) quit                 ; break ;;
        * ) not_option           ; break ;;
     esac
   done

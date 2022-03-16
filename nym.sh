@@ -21,7 +21,6 @@ options=(
     "Nym Sandbox Testnet Installation"
     "Nym Status"
     "Query Systemd Journal With Journalctl"
-    "Bootstrapping"
     "Nym Help"
     "Socket Statistics"
     "Stop Nym Service"
@@ -81,7 +80,7 @@ sudo ufw enable
 sudo systemctl start ufw
 echo "Firewall Rules Added & Enabled"
 
-nym-mixnode init --id $node-id --host $(curl ifconfig.me) --wallet-address $wallet_address
+nym-mixnode init --host $(curl ifconfig.me) --id $node-id --wallet-address $wallet_address
 
 echo "DefaultLimitNOFILE=65535" >> /etc/systemd/system.conf
 sudo systemctl restart systemd-journald

@@ -95,12 +95,14 @@ sudo systemctl status nym-mixnode
 }
 function check_journalctl {
 sudo journalctl -u nym-mixnode -o cat | grep "Since startup mixed"
+read -p "Press enter to continue"
 }
 function nym_help { 
 /usr/bin/nym-mixnode --help
 }
 function socket_statisics { 
 sudo ss -s -t | grep 1789 # if you have specified a different port in your mixnode config, change accordingly
+read -p "Press enter to continue"
 }
 function stop_nym_service { 
 sudo systemctl stop nym-mixnode
@@ -115,6 +117,7 @@ sleep 1
 function bond_information   { 
 source $HOME/.bash_profile
 nym-mixnode node-details --id $node_id
+read -p "Press enter to continue"
 }
 function quit          { 
   echo -e "Exiting ... " ; exit 

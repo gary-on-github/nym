@@ -44,13 +44,13 @@ sudo curl https://sh.rustup.rs -sSf | sh -s -- -y
 source "$HOME"/.cargo/env
 sleep 1
 cd "$HOME" || exit
-wget https://github.com/nymtech/nym/releases/download/v0.12.1/nym-mixnode
+wget https://github.com/nymtech/nym/releases/download/nym-binaries-1.0.0-rc.1/nym-mixnode
 sudo chmod +x nym-mixnode
 sudo mv "$HOME"/nym-mixnode /usr/bin
 
 sudo tee <<EOF >/dev/null /etc/systemd/system/nym-mixnode.service
 [Unit]
-Description=Nym Mixnode (0.12.1)
+Description=Nym Mixnode (1.0.0rc1)
 StartLimitInterval=350
 StartLimitBurst=10
 [Service]

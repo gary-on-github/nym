@@ -17,7 +17,7 @@ function show_feedback {
 
 prompt='Select:'
 options=(
-    "Nym Sandbox Testnet Installation"
+    "Nym Installation"
     "Nym Status"
     "Query Systemd Journal With Journalctl"
     "Nym Help"

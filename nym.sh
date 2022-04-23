@@ -44,7 +44,7 @@ sudo curl https://sh.rustup.rs -sSf | sh -s -- -y
 source "$HOME"/.cargo/env
 sleep 1
 cd "$HOME" || exit
-wget https://github.com/nymtech/nym/releases/download/nym-binaries-1.0.0-rc.1/nym-mixnode
+wget https://github.com/nymtech/nym/releases/download/nym-binaries-1.0.0-rc.2/nym-mixnode
 sudo chmod +x nym-mixnode
 sudo mv "$HOME"/nym-mixnode /usr/bin
 

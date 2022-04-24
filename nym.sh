@@ -1,19 +1,7 @@
 #!/bin/bash
-# Testnets.io
 
 title="Nym Manager"
 version="Version 1.0"
-
-function show_title {
-  clear 
-  # todo - only curl this once. 
-  curl -s testnets.io/core/logo.sh | bash # grab testnets.io ascii logo
-  printf "\n\u001b[33;1m$title - $version\e[0m\n\n"  
-}
-
-function show_feedback {
-  echo -e "> \u001b[32;1m$feedback\e[0m\n"
-}
 
 prompt='Select:'
 options=(
@@ -50,7 +38,7 @@ sudo mv "$HOME"/nym-mixnode /usr/bin
 
 sudo tee <<EOF >/dev/null /etc/systemd/system/nym-mixnode.service
 [Unit]
-Description=Nym Mixnode (1.0.0rc1)
+Description=Nym Mixnode (1.0.0rc2)
 StartLimitInterval=350
 StartLimitBurst=10
 [Service]
@@ -70,12 +58,12 @@ EOF
 
 
 sudo apt install ufw -y
-sudo ufw allow 22
-sudo ufw allow 80
-sudo ufw allow 443
-sudo ufw allow 1789
-sudo ufw allow 1790
-sudo ufw allow 8000
+sudo ufw allow 22/tcp
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 1789/tcp
+sudo ufw allow 1790/tcp
+sudo ufw allow 8000/tcp
 sudo ufw --force enable
 echo "Firewall Rules Added & Enabled"
 
